@@ -1,0 +1,180 @@
+@font-face {
+  font-family: "FigTree";
+  src: url(assets/fonts/Figtree-VariableFont_wght.ttf) format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
+}
+:root {
+  --clr-sarı: #f4d04e;
+  --clr-950: #111111;
+  --clr-500: #6b6b6b;
+  --clr-white: #fff;
+
+  --fs-24: 1.5rem;
+  --fs-16: 1rem;
+  --fs-14: 0.875rem;
+  --fs-12: 0.75rem;
+  --fs-20: 1.25rem;
+
+  --fw-m: 500;
+  --fw-eb: 800;
+
+  --sp-24: 1.5rem;
+  --sp-12: 0.75rem;
+  --sp-8: 0.5rem;
+  --sp-4: 0.25rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+html {
+  font-family: "FigTree", system-ui, sans-serif;
+  background-color: var(--clr-sarı);
+  color: var(--clr-950);
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  line-height: 1.5;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+.wrapper {
+  width: 384px;
+  height: 522px;
+  border-radius: 20px;
+  background-color: var(--clr-white);
+  padding: 24px;
+  border: 1px solid black;
+  box-shadow: 10px 10px black;
+
+  @media screen and (max-width: 40rem) {
+    width: 327px;
+    height: 501px;
+    margin-inline: 24px;
+  }
+
+  & .card-image {
+    border-radius: 10px;
+  }
+
+  & .card-content {
+    padding-block: 1.5rem;
+
+    & .category {
+      padding: 4px 12px;
+      background-color: var(--clr-sarı);
+      width: fit-content;
+      border-radius: 4px;
+      font-weight: var(--fw-eb);
+      font-size: var(--fs-14);
+
+      @media screen and (max-width: 40rem) {
+        font-size: var(--fs-12);
+      }
+    }
+
+    & .time {
+      margin-block: 0.75rem;
+      font-weight: var(--fw-m);
+      font-size: var(--fs-14);
+
+      @media screen and (max-width: 40rem) {
+        font-size: var(--fs-12);
+      }
+    }
+
+    & .title {
+      font-size: var(--fs-24);
+      font-weight: var(--fw-eb);
+      color: var(--clr-950);
+      margin-bottom: 12px;
+      cursor: pointer;
+      transition: 0.2s ease;
+
+      &:hover {
+        color: var(--clr-sarı);
+      }
+
+      @media screen and (max-width: 40rem) {
+        font-size: var(--fs-20);
+      }
+    }
+
+    & .description {
+      color: var(--clr-500);
+      font-size: var(--fs-16);
+
+      @media screen and (max-width: 40rem) {
+        font-size: var(--fs-14);
+      }
+    }
+  }
+
+  & .user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-block: 0.3438rem;
+
+    & .user-name {
+      font-size: var(--fs-14);
+      color: var(--clr-950);
+      font-weight: var(--fw-m);
+    }
+  }
+}
